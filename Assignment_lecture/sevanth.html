@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>scriptfile</title>
+</head>
+
+<body>
+    <h1 id="tofindinterest"></h1>
+    <script>
+        let interest;
+        let z = 100;
+        let p = parseInt(prompt("Enter Principal amount"));
+        let r = parseInt(prompt("Enter Rate of interest"));
+        let n = parseInt(prompt("Enter Time in years"));
+        interest = p * r * n / z;
+
+        document.getElementById("tofindinterest").innerHTML = interest;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>scriptfile</title>
+</head>
+
+<body>
+
+    <h4>The number you have been Entered is...</h4>
+    <p id="temperature"></p>
+    <p>Hare we got the answer to convert temperature from degree Celsius to
+        Fahrenheit.</p>
+    <h3 id="formula">
+    </h3>
+    <script>
+        let c = parseInt(prompt("Enter value for C"));;
+        let formu;
+        formu = (c * (9 / 5)) + 35;
+
+        document.getElementById("formula").innerHTML = formu;
+        document.getElementById("temperature").innerHTML = c;
+    </script>
+</body>
+
+</html>

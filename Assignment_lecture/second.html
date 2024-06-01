@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>scriptfile</title>
+</head>
+
+<body>
+    <table width="400" border="1px" cellspacing="5">
+        <tr>
+            <td>a</td>
+            <td id="a"></td>
+        </tr>
+        <tr>
+            <td>b</td>
+            <td id="b"></td>
+        </tr>
+    </table>
+    <script>
+        let a = parseInt(prompt("Enter value for A"));
+        let b = parseInt(prompt("Enter value for B"));
+        let third;
+        third = a;
+        a = b;
+        b = third;
+        document.getElementById("a").innerHTML = a;
+        document.getElementById("b").innerHTML = b;
+    </script>
+</body>
+
+</html>

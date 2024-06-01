@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>scriptfile</title>
+</head>
+
+<body>
+    <h2 id="grosssal"></h2>
+    <script>
+        let sal = parseInt(prompt("Enter Your salary"));
+        let hra, da, ta;
+        hra = 10 * 100 / sal;
+        da = 5 * 100 / sal;
+        ta = 8 * 100 / sal;
+        let gross;
+        gross = sal + da + hra + ta;
+        document.getElementById("grosssal").innerHTML = gross;
+    </script>
+</body>
+
+</html>
