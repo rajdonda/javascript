@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-btn" style="position: relative;">
+        <button style="width: 80px; height: 30px; border: 1px solid black; background-color: white;"></button>
+        <div class="ab-round">
+            <div class="round-shape" style="width: 20px; height: 20px; border-radius: 50%; position: absolute; background-color: black; top: 5px; left: 1px; z-index: 1000;">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function themechange(color) {
+            return function () {
+                document.body.style.backgroundColor = `${color}`;
+            }
+        }
+        document.getElementById("darktheme").onclick = themechange("black");
+        document.getElementById("lighttheme").onclick = themechange("white");
+    </script>
+</body>
+
+</html>
