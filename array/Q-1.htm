@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Q-1</title>
+</head>
+
+<body>
+    <script>
+
+        // .1
+        let fruits = ["graps", "kiwi", "apple", "orange", "bery"]
+        fruits.push("mango");
+        document.write(fruits + "<br><br>");
+
+        // .2
+        fruits.pop("bery");
+        document.write(fruits + "<br><br>");
+
+        // .3
+        fruits.shift("grap");
+        document.write(fruits + "<br><br>");
+
+        // .4
+        fruits.unshift("banana");
+        document.write(fruits + "<br><br>");
+
+        // .5
+        fruits.splice(0, 1, "pinapple");
+        document.write(fruits + "<br><br>");
+
+        let length = fruits.length;
+        let list = "<ul>";
+        for (let i = 0; i < length; i++) {
+            list += "<li>" + fruits[i] + "</li><br>";
+        }
+        list += "<ul>";
+        document.write(list);   
+    </script>
+</body>
+
+</html>
