@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q-2</title>
+</head>
+
+<body>
+    <script>        console.log("bank id for copy purpose...");</script>
+    <script>
+        class BankAccount {
+            constructor(acno, bal) {
+                this.acno = acno;
+                this.bal = bal;
+            }
+            withdrow(val) {
+                let accountno = parseInt(prompt("Enter your Account number:"));
+                if (this.acno == accountno) {
+                    if (val == 0) {
+                        console.log(); ('0 not add');
+                    }
+                    else {
+                        if (this.bal < val) {
+                            console.log("Insufficient balance");
+                        }
+                        else {
+                            this.bal -= val;
+                            console.log(`youre balance:- ${this.bal}`);
+                        }
+                    }
+                }
+                else {
+                    aleart("invalid account no");
+                    return false
+                }
+            }
+            deposite(val) {
+                this.bal += val;
+                console.log(`your balance:-${this.bal}`);
+            }
+        }
+        let bank = new BankAccount(212121212, 500);
+        bank.withdrow(50);
+        bank.deposite(200);
+        bank.deposite(1000);
+        bank.withdrow(1);
+
+    </script>
+</body>
+
+</html>
