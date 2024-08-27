@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .table {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+        }
+        .table thead th {
+            background-color: #343a40;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .table img {
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Cart Products</h1>
+        <section>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Cart ID</th>
+                        <th>Product ID</th>
+                        <th>Product Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Thumbnail</th>
+                    </tr>
+                </thead>
+                <tbody id="record">
+                    <!-- Table rows will be injected here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        fetch("https://dummyjson.com/carts")
+        .then(rec => rec.json())
+        .then((cart) => {
+            let all = cart.carts;
+            let rows = "";
+            all.map((item) => {
+                item.products.map((product) => {
+                    rows += `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${product.id}</td>
+                        <td>${product.title}</td>
+                        <td>$${product.price}</td>
+                        <td>${product.quantity}</td>
+                        <td>$${product.total}</td>
+                        <td><img src="${product.thumbnail}" alt="Product Image"></td>
+                    </tr>
+                    `;
+                });
+            });
+            document.getElementById('record').innerHTML = rows;
+        });
+    </script>
+</body>
+</html>
